@@ -1,0 +1,20 @@
+Alembic Migrations
+==================
+
+This folder contains database migration scripts managed by Alembic.
+
+Basic commands:
+
+- Initialize migrations (already done):
+    alembic init backend/alembic
+
+- Create a new migration after model changes:
+    alembic revision --autogenerate -m "Describe your change"
+
+- Apply migrations to the database:
+    alembic upgrade head
+
+- Downgrade (rollback) the last migration:
+    alembic downgrade -1
+
+Alembic reads its configuration from alembic.ini in the backend directory. 

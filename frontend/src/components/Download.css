@@ -1,0 +1,117 @@
+.download-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    margin: 0 auto;
+  }
+  
+  .download-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .success-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+  }
+  
+  .download-card h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .download-card p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .download-section {
+    margin: 30px 0;
+  }
+  
+  .download-section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .download-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .download-btn {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+  }
+  
+  .download-btn:hover {
+    border-color: #667eea;
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.1);
+  }
+  
+  .os-icon {
+    font-size: 24px;
+    margin-right: 15px;
+  }
+  
+  .os-name {
+    font-weight: 600;
+    font-size: 16px;
+    display: block;
+  }
+  
+  .file-size {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .instructions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: left;
+  }
+  
+  .instructions h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .instructions ol {
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .instructions li {
+    margin-bottom: 8px;
+  }
+  
+  @media (max-width: 480px) {
+    .download-container {
+      padding: 10px;
+    }
+    
+    .download-card {
+      padding: 30px 20px;
+    }
+  }
