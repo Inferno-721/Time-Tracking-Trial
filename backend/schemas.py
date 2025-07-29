@@ -7,6 +7,12 @@ class EmployeeBase(BaseModel):
     name: str
 
 class EmployeeCreate(EmployeeBase):
+    email: EmailStr
+    name: str
+    password: str
+
+class LoginRequest(BaseModel):
+    email: EmailStr
     password: str
 
 class EmployeeOut(EmployeeBase):
@@ -26,6 +32,11 @@ class ProjectOut(ProjectBase):
     class Config:
         orm_mode = True
 
+class ProjectList(BaseModel):
+    projects: List[ProjectOut]
+    class Config:
+        orm_mode = True
+
 class TaskBase(BaseModel):
     name: str
     project_id: int
@@ -35,6 +46,11 @@ class TaskCreate(TaskBase):
 
 class TaskOut(TaskBase):
     id: int
+    class Config:
+        orm_mode = True
+
+class TaskList(BaseModel):
+    tasks: List[TaskOut]
     class Config:
         orm_mode = True
 

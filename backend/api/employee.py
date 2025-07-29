@@ -24,11 +24,9 @@ def add_employee(employee: schemas.EmployeeCreate, db: Session = Depends(get_db)
     return crud.create_employee(db=db, employee=employee)
 
 @router.post("/login")
-def login_employee(data: dict, db: Session = Depends(get_db)):
-    email = data.get("email")
-    password = data.get("password")
-    emp = crud.get_employee_by_email(db, email)
-    if not emp or not pwd_context.verify(password, emp.hashed_password):
+def login_employee(data: schemas.LoginRequest, db: Session = Depends(get_db)):
+    emp = crud.get_employee_by_email(db, email=data.email)
+    if not emp or not pwd_context.verify(data.password, emp.hashed_password):
         raise HTTPException(status_code=401, detail="Invalid credentials")
     return {"id": emp.id, "name": emp.name, "email": emp.email}
 

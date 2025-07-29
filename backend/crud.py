@@ -31,12 +31,21 @@ def create_project(db: Session, project: schemas.ProjectCreate):
     db.refresh(db_project)
     return db_project
 
+def get_all_projects(db: Session):
+    return db.query(models.Project).all()
+
 def create_task(db: Session, task: schemas.TaskCreate):
     db_task = models.Task(name=task.name, project_id=task.project_id)
     db.add(db_task)
     db.commit()
     db.refresh(db_task)
     return db_task
+
+def get_all_tasks(db: Session):
+    return db.query(models.Task).all()
+
+def get_tasks_by_project(db: Session, project_id: int):
+    return db.query(models.Task).filter(models.Task.project_id == project_id).all()
 
 def create_time_log(db: Session, time_log: schemas.TimeLogCreate):
     db_time_log = models.TimeLog(
